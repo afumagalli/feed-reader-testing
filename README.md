@@ -1,3 +1,17 @@
+# Feed Reader Testing
+
+This is my submission of the Feed Reader Testing project for Udacity's [Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001). For this project, I wrote a suite of tests for an RSS Feed Reader application. These tests can be found in `jasmine/spec/feedreader.js`. The tests are:
+
+- RSS feeds are defined
+- RSS feeds have non-empty URLs
+- RSS feeds have non-empty names
+- The menu is hidden by default
+- The menu changes visibility when clicked
+- Initial entries load correctly
+- New feed selection changes content
+
+To run the project, simply open `index.html` in your favorite web browser. Included below is the original project specification.
+
 # Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.

@@ -31,7 +31,7 @@ $(function() {
          * ensures it has a URL defined
          * and that the URL is not empty.
          */
-        it('has non-empty URL', function() {
+        it('have non-empty URLs', function() {
             var urls = [];
             for (var i = 0; i < allFeeds.length; i++) {
                 expect(allFeeds[i].url).toBeDefined();
@@ -46,7 +46,7 @@ $(function() {
          * it has a name defined
          * and that the name is not empty.
          */
-        it('has non-empty name', function() {
+        it('have non-empty names', function() {
             var names = [];
             for (var i = 0; i < allFeeds.length; i++) {
                 expect(allFeeds[i].name).toBeDefined();
@@ -116,7 +116,7 @@ $(function() {
          * by the loadFeed function that the 
          * content actually changes.
          */
-        it('changes content when loading new feed', function(done) {
+        it('changes content', function(done) {
             var newFeed = $('.feed');
             expect(initialFeed).not.toBe(newFeed);
             done();
