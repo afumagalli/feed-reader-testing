@@ -27,7 +27,7 @@ $(function() {
         });
 
         /* Loops through each feed
-         * in the allFeeds object and 
+         * in the allFeeds object and
          * ensures it has a URL defined
          * and that the URL is not empty.
          */
@@ -38,11 +38,10 @@ $(function() {
                 expect(allFeeds[i].url).not.toBe('');
                 urls.push(allFeeds[i].url);
             }
-            expect(urls.length).toBe(allFeeds.length);
         });
 
         /* Loops through each feed
-         * in the allFeeds object and ensures 
+         * in the allFeeds object and ensures
          * it has a name defined
          * and that the name is not empty.
          */
@@ -53,7 +52,6 @@ $(function() {
                 expect(allFeeds[i].name).not.toBe('');
                 names.push(allFeeds[i].name);
             }
-            expect(names.length).toBe(allFeeds.length);
         });
     });
 
@@ -73,30 +71,27 @@ $(function() {
          */
         it('changes visibility when clicked', function() {
             $('.menu-icon-link').click();
-            expect(body.hasClass('menu-hidden')).toBe(false);
+            expect(body.hasClass('menu-hidden')).toBeFalsy();
             $('.menu-icon-link').click();
-            expect(body.hasClass('menu-hidden')).toBe(true);
+            expect(body.hasClass('menu-hidden')).toBeTruthy();
         });
     });
 
 
     describe('Initial Entries', function() {
         beforeEach(function(done) {
-            loadFeed(0, function() {
-                done();
-            });
+            loadFeed(0, done);
         });
 
         /* Ensures that when the loadFeed
-         * function is called and completes 
+         * function is called and completes
          * its work, there is at least
-         * a single .entry element within 
+         * a single .entry element within
          * the .feed container.
          */
-        it('load correctly', function(done) {
-            var entries = $('.feed').find('.entry').length;
+        it('load correctly', function() {
+            var entries = $('.feed .entry').length;
             expect(entries).toBeGreaterThan(0);
-            done();
         });
     });
 
@@ -105,21 +100,18 @@ $(function() {
         var initialFeed = null;
         beforeEach(function(done) {
             loadFeed(0, function() {
-                initialFeed = $('.feed');
-                loadFeed(1, function() {
-                    done();
-                });
+                initialFeed = $('.feed').html();
+                loadFeed(1, done);
             });
         });
 
         /* Ensures that when a new feed is loaded
-         * by the loadFeed function that the 
+         * by the loadFeed function that the
          * content actually changes.
          */
-        it('changes content', function(done) {
-            var newFeed = $('.feed');
+        it('changes content', function() {
+            var newFeed = $('.feed').html();
             expect(initialFeed).not.toBe(newFeed);
-            done();
         });
     });
 }());
